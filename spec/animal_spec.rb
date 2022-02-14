@@ -31,8 +31,8 @@ describe Animal do
       end
     end
   describe '#played' do
-    it "increase the animal's health by 2" do
-      expect(animal.played).to change{ animal.health }.by 2
+    it "increase the animal's health by 1 per hour of fun" do
+      expect { animal.played(60) }.to change{ animal.health }.by 1
     end
   end
 

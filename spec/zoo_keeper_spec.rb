@@ -11,8 +11,8 @@ describe ZooKeeper do
   end
 
   describe '#play' do
-    it "increases the animal's health by 2 when we play for an hour" do
-      expect { greg.play(lion, 60) }.to change{ lion.health }.by 2
+    it "increases the animal's health by 1 when we play for an hour" do
+      expect { greg.play(lion, 60) }.to change{ lion.health }.by 1
     end
   end
 end

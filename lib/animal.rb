@@ -4,7 +4,7 @@ class Animal
 
 attr_reader :name, :hunger, :health
 
-  def initialize(name, hunger)
+  def initialize(name, hunger = 10)
     @name = name
     @hunger = hunger
     @health = 10
@@ -20,7 +20,7 @@ attr_reader :name, :hunger, :health
   end
 
   def played(time)
-    
+    @health += time/60
   end
 
 end
