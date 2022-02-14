@@ -12,7 +12,24 @@ describe ZooKeeper do
 
   describe '#play' do
     it "increases the animal's health by 1 when we play for an hour" do
-      expect { greg.play(lion, 60) }.to change{ lion.health }.by 1
+      expect { greg.play(lion, 1) }.to change{ lion.health }.by 1
+    end
+  end
+
+  describe '#wash' do
+    it "increases the animal's health by 2" do
+      expect { greg.wash(lion) }.to change{ lion.health }.by 2
+    end
+  end
+
+  describe '#bedtime' do
+    it "puts the animal to sleep" do
+      greg.play(lion, 6)
+      greg.bedtime(lion)
+      expect(lion.asleep).to be true
+    end
+    it "can't put animal to sleep if it has too much energy" do
+      expect(greg.bedtime(lion)).to eq "lion has too much energy!"
     end
   end
 end

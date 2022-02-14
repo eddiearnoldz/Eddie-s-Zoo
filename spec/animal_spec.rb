@@ -11,6 +11,12 @@ describe Animal do
     it "has a starting health level of 10" do
       expect(animal.health).to eq 10
     end
+    it "has a starting energy level of 10" do
+      expect(animal.energy).to eq 10
+    end
+    it "has a sleep varaiable that starts as false" do
+      expect(animal.asleep).to eq false
+    end
 
   describe '#eat'
   let(:animal) { described_class.new("lion", 10) }
@@ -32,10 +38,21 @@ describe Animal do
     end
   describe '#played' do
     it "increase the animal's health by 1 per hour of fun" do
-      expect { animal.played(60) }.to change{ animal.health }.by 1
+      expect { animal.played(1) }.to change{ animal.health }.by 1
+    end
+    it "reduces their energy by 2" do
+      expect { animal.played(1) }.to change{ animal.energy }.by -2
     end
   end
 
+  describe '#sleep' do
+    let(:animal) { described_class.new("lion", 10) }
+    it 'the animal goes to sleep if their energy is less than 6' do
+      animal.played(6)
+      animal.sleep
+      expect(animal.asleep).to eq true
+    end
+  end
 
 
 

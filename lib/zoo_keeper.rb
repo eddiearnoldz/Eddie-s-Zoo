@@ -1,5 +1,5 @@
-require 'animal'
-require 'food'
+require_relative '../lib/animal'
+require_relative '../lib/food'
 
 class ZooKeeper
 
@@ -15,6 +15,14 @@ class ZooKeeper
 
   def play(animal, time)
     animal.played(time)
+  end
+
+  def wash(animal)
+    animal.washed
+  end
+
+  def bedtime(animal)
+    animal.sleep
   end
 
 end
