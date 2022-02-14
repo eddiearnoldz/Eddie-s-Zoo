@@ -48,7 +48,7 @@ describe Animal do
   describe '#sleep' do
     let(:animal) { described_class.new("lion", 10) }
     it 'the animal goes to sleep if their energy is less than 6' do
-      animal.played(6)
+      3.times { animal.played(1) }
       animal.sleep
       expect(animal.asleep).to eq true
     end

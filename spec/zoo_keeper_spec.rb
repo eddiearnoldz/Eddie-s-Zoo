@@ -24,7 +24,7 @@ describe ZooKeeper do
 
   describe '#bedtime' do
     it "puts the animal to sleep" do
-      greg.play(lion, 6)
+      3.times { greg.play(lion, 1) }
       greg.bedtime(lion)
       expect(lion.asleep).to be true
     end
