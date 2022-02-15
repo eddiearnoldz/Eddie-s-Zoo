@@ -22,7 +22,7 @@ class ZooKeeper
   end
 
   def bedtime(animal)
-    animal.sleep
+    animal.sleepy
   end
 
 end

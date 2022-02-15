@@ -30,14 +30,26 @@ attr_reader :name, :hunger, :health, :energy, :asleep
     @health += 2
   end
 
-  def sleep
+  def sleepy
     if @asleep == true
       "Shhhh...#{@name} is already asleep"
-  elsif @energy > 6
-    "#{@name} has too much energy!"
-   else
-    @asleep = true
+    elsif @energy > 6
+      "#{@name} has too much energy!"
+    else
+      @asleep = true
    end
+  end
+
+  def ageing
+    until @health == 0
+      if @health > 1 
+        sleep 1
+         @health -= 1
+      else
+        "#{@name} is dead"
+       break
+      end
+    end
   end
 
 end

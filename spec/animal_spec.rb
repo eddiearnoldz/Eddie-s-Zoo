@@ -49,8 +49,15 @@ describe Animal do
     let(:animal) { described_class.new("lion", 10) }
     it 'the animal goes to sleep if their energy is less than 6' do
       3.times { animal.played(1) }
-      animal.sleep
+      animal.sleepy
       expect(animal.asleep).to eq true
+    end
+  end
+
+  describe '#ageing' do
+    it "reduces the health of an animal over time" do
+      allow(animal).to receive(:ageing).and_return "lion is dead"
+      expect(animal.ageing).to eq "lion is dead"
     end
   end
 
